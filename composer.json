@@ -1,0 +1,27 @@
+{
+    "name": "groovey/helpers",
+    "description": "Common helper files",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Harold Kim Cantil",
+            "email": "groovey@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "files": [
+            "src/array.php",
+            "src/date.php",
+            "src/debug.php",
+            "src/http.php",
+            "src/misc.php",
+            "src/number.php",
+            "src/string.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
