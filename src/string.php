@@ -9,3 +9,17 @@ if (!function_exists('string_pad')) {
         return str_pad($value, $length, $padding, $type);
     }
 }
+
+/**
+ * Mask the string with *
+ */
+if (!function_exists('string_mask')) {
+    function string_mask(string $value, int $offset = -4, string $replacement = '*')
+    {
+        $length   = strlen($value);
+        $last     = substr($value, -4);
+        $asterisk = preg_replace("/\S/", $replacement, $value);
+        $mask     = substr($asterisk, 0, $length - 4);
+        return $mask . $last;
+    }
+}
