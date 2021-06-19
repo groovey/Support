@@ -5,7 +5,7 @@ Common helper functions.
 #### Installation
 
 ```bash
-$ composer require --dev phpunit/phpunit
+$ composer require groovey/helpers
 ```
 
 #### Test
