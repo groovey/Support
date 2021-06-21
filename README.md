@@ -5,7 +5,7 @@ Common helper functions.
 #### Installation
 
 ```bash
-$ composer require groovey/helpers
+$ composer require groovey/support
 ```
 
 #### Test
