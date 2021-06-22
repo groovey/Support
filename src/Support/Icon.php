@@ -6,6 +6,10 @@ namespace Pandango\Support;
  */
 class Icon
 {
+
+    /**
+     * Renders the svg icon
+     */
     public function get($name)
     {
         switch (strtolower($name)) {

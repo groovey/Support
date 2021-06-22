@@ -6,11 +6,7 @@ class Paginate
     private $display = 25;
 
     /**
-     * Pagination
-     *
-     * @param mixed $model
-     * @param integer $displayPerPage
-     * @return object
+     * Display data in paginated way
      */
     public function paginate($model, int $displayPerPage = null)
     {

@@ -3,6 +3,9 @@ namespace Pandango\Support;
 
 class Theme
 {
+    /**
+     * Shows the status in a color coded way
+     */
     public function status($value)
     {
         switch (strtolower($value)) {
@@ -30,6 +33,9 @@ class Theme
         return $theme;
     }
 
+    /**
+     * Shows in badge
+     */
     public function bar($value, $options = [], $badges = ['primary', 'info', 'warning', 'danger', 'success', 'secondary'])
     {
         $key   = array_search($value, $options);
