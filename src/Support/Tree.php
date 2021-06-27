@@ -29,9 +29,9 @@ class Tree
     }
 
     /**
-     * rearrange datas base on parent_id
+     * Rearrange datas base on parent_id
      */
-    private function reOrder($array, $parent=null, $indent='')
+    private function reOrder($array, $parent = null, $indent = '')
     {
         $return = [];
         foreach ($array as $key => $val) {
@@ -45,8 +45,6 @@ class Tree
 
     /**
      * Returns data in collection
-     *
-     * @return void
      */
     public function toCollection()
     {
