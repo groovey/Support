@@ -56,7 +56,7 @@ class TreeTest extends TestCase
     {
         $tree  = new Tree;
         $datas = $tree->make($this->getCategories())->toNestedArray();
-        $datas = $tree->find('cat-2-2-1');
-        $this->assertContains('cat-2-2-1', $datas);
+        $datas = $tree->find('cat-2-2', $datas);
+        $this->assertContains('cat-2-2', $datas);
     }
 }

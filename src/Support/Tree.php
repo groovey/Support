@@ -31,7 +31,7 @@ class Tree
     /**
      * Rearrange datas base on parent_id
      */
-    private function reOrder($array, $parent = null, $indent = '')
+    private function reOrder(array $array, int $parent = null, string $indent = '')
     {
         $return = [];
         foreach ($array as $key => $val) {
@@ -107,10 +107,8 @@ class Tree
     /**
      * Search category via slug and returns the nested array
      */
-    public function find($slug)
+    public function find(string $slug, array $datas)
     {
-        $datas = $this->datas;
-
         foreach ($datas as $data) {
             $subcategories = $data['subcategories'] ?? [];
 
@@ -130,7 +128,7 @@ class Tree
     /**
      * Adds spacer base on level
      */
-    public function spacer($level)
+    public function spacer(int $level)
     {
         return str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", $level - 1);
     }
