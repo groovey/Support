@@ -105,6 +105,29 @@ class Tree
     }
 
     /**
+     * Search category via slug and returns the nested array
+     */
+    public function find($slug)
+    {
+        $datas = $this->datas;
+
+        foreach ($datas as $data) {
+            $subcategories = $data['subcategories'] ?? [];
+
+            if ($slug == $data['slug']) {
+                return $data;
+            } elseif (count($subcategories) > 1) {
+                $found = $this->find($slug, $data['subcategories']);
+                if ($found) {
+                    return $found;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
      * Adds spacer base on level
      */
     public function spacer($level)

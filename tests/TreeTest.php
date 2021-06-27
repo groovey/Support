@@ -48,4 +48,15 @@ class TreeTest extends TestCase
         $datas = (new Tree)->make($this->getCategories())->toNestedArray();
         $this->assertContains('cat-2-2-1', $datas['cat-2']['subcategories']['cat-2-1']['subcategories']['cat-2-2-1']);
     }
+
+    /**
+    * Check if the last category item is present
+    */
+    public function testFind()
+    {
+        $tree  = new Tree;
+        $datas = $tree->make($this->getCategories())->toNestedArray();
+        $datas = $tree->find('cat-2-2-1');
+        $this->assertContains('cat-2-2-1', $datas);
+    }
 }
