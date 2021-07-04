@@ -70,7 +70,7 @@ class Tree
     /**
      * To a multi dimensional array
      */
-    public function toNestedArray()
+    public function toNestedArray(bool $withKey = false)
     {
         $datas      = $this->datas;
         $categories = [];
@@ -83,7 +83,13 @@ class Tree
         // fill in 'subcategories' while maintaining the references using '&' operator
         foreach ($categories as $key => &$data) {
             if ($data['parent_id'] != null) {
-                $categories[$data['parent_id']]['subcategories'][$data['slug']] = &$data;
+
+                // With key is for formatting
+                if ($withKey == true) {
+                    $categories[$data['parent_id']]['subcategories'][$data['slug']] = &$data;
+                } else {
+                    $categories[$data['parent_id']]['subcategories'][] = &$data;
+                }
             }
         }
 
