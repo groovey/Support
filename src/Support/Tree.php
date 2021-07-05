@@ -113,15 +113,15 @@ class Tree
     /**
      * Search category via slug and returns the nested array
      */
-    public function find(string $slug, array $datas)
+    public function find(int $id, array $datas)
     {
         foreach ($datas as $data) {
             $subcategories = $data['subcategories'] ?? [];
 
-            if ($slug == $data['slug']) {
+            if ($id == $data['id']) {
                 return $data;
             } elseif (count($subcategories) > 1) {
-                $found = $this->find($slug, $data['subcategories']);
+                $found = $this->find($id, $data['subcategories']);
                 if ($found) {
                     return $found;
                 }
